@@ -169,6 +169,18 @@ a:hover{color:#0F2A44}
 @media (max-width:960px){.pg-contact .navlinks .hide-sm{display:none}}
 .pg-contact .btn-accent{background:#8FCBF2;color:#000000}
 .pg-contact .btn-accent:hover{background:#A9D8F7;color:#000000}
+/* MOTION: subtle, only when the visitor hasn't asked for reduced motion */
+@media (prefers-reduced-motion:no-preference){
+@keyframes epic-page-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.page:not([hidden]){animation:epic-page-in .45s ease-out both}
+.js-reveal .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease-out,transform .7s ease-out}
+.js-reveal .rv.in{opacity:1;transform:none}
+.cards>*,#ss-grid article{transition:transform .25s ease,box-shadow .25s ease}
+.cards>*:hover,#ss-grid article:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(15,42,68,.12)}
+.btn,#ss-cats button{transition:background-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}
+.btn:hover,#ss-cats button:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(15,42,68,.18)}
+.btn:active,#ss-cats button:active{transform:none}
+}
 </style>
 </head>
 <body>
@@ -1067,6 +1079,22 @@ function updateWA(){
 form.addEventListener('input',updateWA);form.addEventListener('change',updateWA);
 form.addEventListener('submit',e=>e.preventDefault());
 updateWA();
+/* Scroll reveal: fade sections in as they enter the screen */
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  document.documentElement.classList.add('js-reveal');
+  const items=[];
+  document.querySelectorAll('section .wrap>*:not(.cards), .cards>*').forEach(el=>{
+    if(el.parentElement.classList.contains('cards')){el.style.transitionDelay=Math.min([...el.parentElement.children].indexOf(el),5)*90+'ms';}
+    el.classList.add('rv'); items.push(el);
+  });
+  let pending=false;
+  const check=()=>{pending=false;const lim=innerHeight*0.94;
+    for(let k=items.length-1;k>=0;k--){const el=items[k];if(!el.offsetParent)continue;
+      if(el.getBoundingClientRect().top<lim){el.classList.add('in');items.splice(k,1);setTimeout(()=>{el.style.transitionDelay='';},1300);}}};
+  const queue=()=>{if(!pending){pending=true;setTimeout(check,50);}};
+  addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue);addEventListener('hashchange',()=>setTimeout(check,20));
+  check();
+}
 }
 </script>
 </body>
