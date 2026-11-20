@@ -169,6 +169,54 @@ a:hover{color:#0F2A44}
 @media (max-width:960px){.pg-contact .navlinks .hide-sm{display:none}}
 .pg-contact .btn-accent{background:#8FCBF2;color:#000000}
 .pg-contact .btn-accent:hover{background:#A9D8F7;color:#000000}
+/* MODERN LAYER (Option A: clean & airy) */
+.hdr{position:sticky;top:0;z-index:40;padding:14px 0;margin-bottom:-92px;pointer-events:none}
+.hdr .bar{pointer-events:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid #E3EDF6;border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 8px 30px rgba(15,42,68,.07)}
+.hdr .bar>a svg{width:24px;height:42px}
+.page .hdr .navlinks{flex-wrap:nowrap;gap:22px}
+.page .hdr .navlinks a{font-size:14px}
+.page .hdr .navlinks a.active{text-decoration:none;background:#EAF4FC;border-radius:999px;padding:8px 14px;margin:0 -8px}
+.page .hdr .btn{min-height:46px;padding:0 22px;font-size:15px}
+.hdr+section{padding-top:164px!important}
+.pg-home .hdr+section{padding-top:148px!important;background:#F6FAFD}
+section[id]{scroll-margin-top:96px}
+.page h1{letter-spacing:-1.5px}
+.pg-home #top h1{letter-spacing:-2px}
+.page h2[style*="font-size:40px"]{letter-spacing:-1.2px}
+.page h2[style*="font-size:34px"]{letter-spacing:-.8px}
+#top .chip{align-self:flex-start;display:inline-flex;gap:10px;align-items:center;margin:0;background:#FFFFFF;border:1px solid #D7E4F0;border-radius:999px;padding:8px 16px;font-size:12px;font-weight:700;letter-spacing:1.5px;color:#0F2A44}
+#top .chip i{width:8px;height:8px;border-radius:999px;background:#8FCBF2;box-shadow:0 0 0 4px #DCEEFB;flex:none}
+#top .hl{background:linear-gradient(transparent 62%,#8FCBF2 62%,#8FCBF2 92%,transparent 92%)}
+.hero-pic{position:relative;min-height:540px}
+.hero-frame{position:absolute;inset:0;border-radius:36px;overflow:hidden;background:#0F2A44}
+.float{position:absolute;z-index:1;background:#FFFFFF;border-radius:20px;padding:14px 18px;box-shadow:0 20px 40px rgba(15,42,68,.14);display:flex;gap:12px;align-items:center}
+.float.f1{left:-28px;bottom:48px}
+.float.f2{right:-16px;top:40px}
+.float .dot{width:40px;height:40px;border-radius:12px;background:#DCEEFB;display:grid;place-items:center;flex:none}
+.hdr+section img{border-radius:36px!important}
+.page .cards>[style*="background:#FFFFFF"]{border:1px solid #E3EDF6;border-radius:24px!important}
+#home-conditions .cards>div>svg:first-child{width:56px;height:56px;padding:12px;background:#EAF4FC;border-radius:16px;box-sizing:border-box}
+.pg-conditions .cond{border-color:#E3EDF6;border-radius:24px}
+.page section[style*="background:#0F2A44"]{margin:0 32px;border-radius:40px}
+.page section[style*="background:#0F2A44"]:has(+footer){margin-bottom:32px}
+#home-fees .cards>[style*="#163757"]{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.14)}
+@media (max-width:960px){.float.f1{left:12px}.float.f2{right:12px}}
+@media (max-width:640px){
+.hdr .bar{padding-left:16px}
+.hdr .bar>a>span>span+span{display:none}
+.page .hdr .btn{white-space:nowrap;padding:0 18px;font-size:14px}
+.page .hero-grid,.page .split,.page .two{grid-template-columns:minmax(0,1fr)}
+.page section[style*="background:#0F2A44"]>.wrap{padding:0 20px}
+.pg-fees [style*="minmax(320px,1fr)"]{grid-template-columns:minmax(0,1fr)!important;padding:28px!important}
+.pg-fees p[style*="font-size:64px"]{font-size:44px!important}
+.page h1{font-size:40px!important;letter-spacing:-1px}
+.page h2[style*="font-size:40px"]{font-size:32px!important}
+#top .chip{border-radius:18px}
+.hero-pic{min-height:420px}
+.hero-frame{border-radius:28px}
+.hdr+section img{border-radius:28px!important}
+.page section[style*="background:#0F2A44"]{margin:0 12px;border-radius:28px}
+}
 /* MOTION: subtle, only when the visitor hasn't asked for reduced motion */
 @media (prefers-reduced-motion:no-preference){
 @keyframes epic-page-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -195,8 +243,8 @@ a:hover{color:#0F2A44}
 </div>
 </div>
 
-<header style="background:#FFFFFF;border-bottom:1px solid #D7E4F0">
-<div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px">
+<header class="hdr">
+<div class="wrap"><div class="bar">
 <a href="#top" style="display:flex;align-items:center;gap:14px;text-decoration:none">
 <svg width="28" height="48" viewBox="0 0 28 48" aria-hidden="true"><circle cx="14" cy="4" r="3.5" fill="#8FCBF2"/><circle cx="12" cy="14" r="4" fill="#5DAAE0"/><circle cx="11" cy="25" r="4.5" fill="#0F2A44"/><circle cx="13" cy="36" r="5" fill="#0F2A44"/><circle cx="16" cy="45" r="3" fill="#0F2A44"/></svg>
 <span style="display:flex;flex-direction:column;line-height:1.1">
@@ -213,14 +261,14 @@ a:hover{color:#0F2A44}
 <a class="hide-sm" href="#contact">Contact</a>
 <a class="btn btn-primary" href="https://wa.me/94779598421">Book on WhatsApp</a>
 </nav>
-</div>
+</div></div>
 </header>
 
 <section id="top" style="padding:80px 0 72px">
 <div class="wrap hero-grid">
 <div style="display:flex;flex-direction:column;gap:24px">
-<p style="margin:0;font-size:13px;font-weight:700;letter-spacing:3px;color:#0F2A44">SRI LANKA’S ORIGINAL CHIROPRACTIC CLINIC · SINCE 2014</p>
-<h1 style="margin:0;font-size:56px;line-height:1.08;font-weight:800;color:#0F2A44">Evidence-based care for back, neck and joint pain</h1>
+<p class="chip"><i aria-hidden="true"></i>SRI LANKA’S ORIGINAL CHIROPRACTIC CLINIC · SINCE 2014</p>
+<h1 style="margin:0;font-size:60px;line-height:1.04;font-weight:800;color:#0F2A44">Evidence-based care for back, neck and <span class="hl">joint pain</span></h1>
 <p style="margin:0;font-size:19px;line-height:1.6;color:#333333;max-width:560px">Internationally trained doctors of chiropractic who explain before they adjust. Non-drug, non-surgical care for people of every age, from babies to grandparents.</p>
 <div style="display:flex;gap:16px;flex-wrap:wrap">
 <a class="btn btn-primary" href="https://wa.me/94779598421">
@@ -235,9 +283,10 @@ Book on WhatsApp</a>
 <div><p style="margin:0;font-size:28px;font-weight:800;color:#0F2A44">BOI</p><p style="margin:4px 0 0;font-size:14px;color:#333333">approved company</p></div>
 </div>
 </div>
-<div style="position:relative;min-height:520px;border-radius:28px;background:#0F2A44;overflow:hidden;display:flex;align-items:flex-end;padding:28px">
-<img src="img/hero.jpg" alt="A chiropractor adjusting a patient’s back" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-<div style="position:relative;background:#FFFFFF;border-radius:18px;padding:16px 20px;display:flex;gap:14px;align-items:center"><p style="margin:0;font-size:28px;font-weight:800;color:#0F2A44">28,000+</p><p style="margin:0;font-size:14px;line-height:1.4;color:#111111">patients cared for<br>since 2014</p></div>
+<div class="hero-pic">
+<div class="hero-frame"><img src="img/hero.jpg" alt="A chiropractor adjusting a patient’s back" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+<div class="float f2"><span class="dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F2A44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><p style="margin:0;font-size:13px;line-height:1.35;color:#111111"><b style="font-size:14px;color:#0F2A44">Explain first</b><br>then adjust</p></div>
+<div class="float f1"><p style="margin:0;font-size:28px;font-weight:800;color:#0F2A44">28,000+</p><p style="margin:0;font-size:14px;line-height:1.4;color:#111111">patients cared for<br>since 2014</p></div>
 </div>
 </div>
 </section>
@@ -449,8 +498,8 @@ Book on WhatsApp</a>
 </div>
 </div>
 
-<header style="background:#FFFFFF;border-bottom:1px solid #D7E4F0">
-<div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px">
+<header class="hdr">
+<div class="wrap"><div class="bar">
 <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none">
 <svg width="28" height="48" viewBox="0 0 28 48" aria-hidden="true"><circle cx="14" cy="4" r="3.5" fill="#8FCBF2"/><circle cx="12" cy="14" r="4" fill="#5DAAE0"/><circle cx="11" cy="25" r="4.5" fill="#0F2A44"/><circle cx="13" cy="36" r="5" fill="#0F2A44"/><circle cx="16" cy="45" r="3" fill="#0F2A44"/></svg>
 <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:24px;font-weight:800;letter-spacing:2px;color:#0F2A44">EPIC</span><span style="font-size:12px;font-weight:600;letter-spacing:1.5px;color:#333333">CHIROPRACTIC CLINIC</span></span>
@@ -464,7 +513,7 @@ Book on WhatsApp</a>
 <a class="hide-sm" href="#contact">Contact</a>
 <a class="btn btn-primary" href="https://wa.me/94779598421">Book on WhatsApp</a>
 </nav>
-</div>
+</div></div>
 </header>
 
 <section style="background:#EAF4FC;padding:72px 0 80px">
@@ -548,8 +597,8 @@ Book on WhatsApp</a>
 </div>
 </div>
 
-<header style="background:#FFFFFF;border-bottom:1px solid #D7E4F0">
-<div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px">
+<header class="hdr">
+<div class="wrap"><div class="bar">
 <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none">
 <svg width="28" height="48" viewBox="0 0 28 48" aria-hidden="true"><circle cx="14" cy="4" r="3.5" fill="#8FCBF2"/><circle cx="12" cy="14" r="4" fill="#5DAAE0"/><circle cx="11" cy="25" r="4.5" fill="#0F2A44"/><circle cx="13" cy="36" r="5" fill="#0F2A44"/><circle cx="16" cy="45" r="3" fill="#0F2A44"/></svg>
 <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:24px;font-weight:800;letter-spacing:2px;color:#0F2A44">EPIC</span><span style="font-size:12px;font-weight:600;letter-spacing:1.5px;color:#333333">CHIROPRACTIC CLINIC</span></span>
@@ -563,7 +612,7 @@ Book on WhatsApp</a>
 <a class="hide-sm" href="#contact">Contact</a>
 <a class="btn btn-primary" href="https://wa.me/94779598421">Book on WhatsApp</a>
 </nav>
-</div>
+</div></div>
 </header>
 
 <section style="background:#EAF4FC;padding:72px 0 80px">
@@ -653,8 +702,8 @@ Book on WhatsApp</a>
 </div>
 </div>
 
-<header style="background:#FFFFFF;border-bottom:1px solid #D7E4F0">
-<div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px">
+<header class="hdr">
+<div class="wrap"><div class="bar">
 <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none">
 <svg width="28" height="48" viewBox="0 0 28 48" aria-hidden="true"><circle cx="14" cy="4" r="3.5" fill="#8FCBF2"/><circle cx="12" cy="14" r="4" fill="#5DAAE0"/><circle cx="11" cy="25" r="4.5" fill="#0F2A44"/><circle cx="13" cy="36" r="5" fill="#0F2A44"/><circle cx="16" cy="45" r="3" fill="#0F2A44"/></svg>
 <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:24px;font-weight:800;letter-spacing:2px;color:#0F2A44">EPIC</span><span style="font-size:12px;font-weight:600;letter-spacing:1.5px;color:#333333">CHIROPRACTIC CLINIC</span></span>
@@ -668,7 +717,7 @@ Book on WhatsApp</a>
 <a class="hide-sm" href="#contact">Contact</a>
 <a class="btn btn-primary" href="https://wa.me/94779598421">Book on WhatsApp</a>
 </nav>
-</div>
+</div></div>
 </header>
 
 <section style="background:#EAF4FC;padding:72px 0 80px">
@@ -758,8 +807,8 @@ Book on WhatsApp</a>
 </div>
 </div>
 
-<header style="background:#FFFFFF;border-bottom:1px solid #D7E4F0">
-<div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px">
+<header class="hdr">
+<div class="wrap"><div class="bar">
 <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none">
 <svg width="28" height="48" viewBox="0 0 28 48" aria-hidden="true"><circle cx="14" cy="4" r="3.5" fill="#8FCBF2"/><circle cx="12" cy="14" r="4" fill="#5DAAE0"/><circle cx="11" cy="25" r="4.5" fill="#0F2A44"/><circle cx="13" cy="36" r="5" fill="#0F2A44"/><circle cx="16" cy="45" r="3" fill="#0F2A44"/></svg>
 <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:24px;font-weight:800;letter-spacing:2px;color:#0F2A44">EPIC</span><span style="font-size:12px;font-weight:600;letter-spacing:1.5px;color:#333333">CHIROPRACTIC CLINIC</span></span>
@@ -773,7 +822,7 @@ Book on WhatsApp</a>
 <a class="hide-sm" href="#contact">Contact</a>
 <a class="btn btn-primary" href="https://wa.me/94779598421">Book on WhatsApp</a>
 </nav>
-</div>
+</div></div>
 </header>
 
 <section style="background:#EAF4FC;padding:72px 0 80px">
@@ -865,8 +914,8 @@ Book on WhatsApp</a>
 </div>
 </div>
 
-<header style="background:#FFFFFF;border-bottom:1px solid #D7E4F0">
-<div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px">
+<header class="hdr">
+<div class="wrap"><div class="bar">
 <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none">
 <svg width="28" height="48" viewBox="0 0 28 48" aria-hidden="true"><circle cx="14" cy="4" r="3.5" fill="#8FCBF2"/><circle cx="12" cy="14" r="4" fill="#5DAAE0"/><circle cx="11" cy="25" r="4.5" fill="#0F2A44"/><circle cx="13" cy="36" r="5" fill="#0F2A44"/><circle cx="16" cy="45" r="3" fill="#0F2A44"/></svg>
 <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:24px;font-weight:800;letter-spacing:2px;color:#0F2A44">EPIC</span><span style="font-size:12px;font-weight:600;letter-spacing:1.5px;color:#333333">CHIROPRACTIC CLINIC</span></span>
@@ -880,7 +929,7 @@ Book on WhatsApp</a>
 <a class="hide-sm" href="#contact">Contact</a>
 <a class="btn btn-primary" href="https://wa.me/94779598421">Book on WhatsApp</a>
 </nav>
-</div>
+</div></div>
 </header>
 
 <section style="background:#EAF4FC;padding:72px 0 80px">
@@ -942,8 +991,8 @@ Book on WhatsApp</a>
 </div>
 </div>
 
-<header style="background:#FFFFFF;border-bottom:1px solid #D7E4F0">
-<div class="wrap" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:18px;padding-bottom:18px">
+<header class="hdr">
+<div class="wrap"><div class="bar">
 <a href="#home" style="display:flex;align-items:center;gap:14px;text-decoration:none">
 <svg width="28" height="48" viewBox="0 0 28 48" aria-hidden="true"><circle cx="14" cy="4" r="3.5" fill="#8FCBF2"/><circle cx="12" cy="14" r="4" fill="#5DAAE0"/><circle cx="11" cy="25" r="4.5" fill="#0F2A44"/><circle cx="13" cy="36" r="5" fill="#0F2A44"/><circle cx="16" cy="45" r="3" fill="#0F2A44"/></svg>
 <span style="display:flex;flex-direction:column;line-height:1.1"><span style="font-size:24px;font-weight:800;letter-spacing:2px;color:#0F2A44">EPIC</span><span style="font-size:12px;font-weight:600;letter-spacing:1.5px;color:#333333">CHIROPRACTIC CLINIC</span></span>
@@ -957,7 +1006,7 @@ Book on WhatsApp</a>
 <a class="hide-sm active" href="#contact" aria-current="page">Contact</a>
 <a class="btn btn-primary" href="https://wa.me/94779598421">Book on WhatsApp</a>
 </nav>
-</div>
+</div></div>
 </header>
 
 <section style="background:#EAF4FC;padding:72px 0 80px">
